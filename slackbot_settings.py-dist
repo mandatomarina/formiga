@@ -1,0 +1,10 @@
+API_TOKEN = 'SLACKTOKEN'
+
+PLUGINS = [
+    'formiga.plugins',
+]
+
+
+DEFAULT_REPLY = "Não entendi patavinas."
+
+ERRORS_TO = "dev"
