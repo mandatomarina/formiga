@@ -44,9 +44,10 @@ class Projeto:
             self.autor = soup[0].xpath('./td')[0].text_content().replace('\n','').replace('\t','').replace('\r','').strip()
             self.autor_url = base_url + soup[0].xpath("./td/a")[0].get('href')
             n = soup[0].xpath('./td/a[@target="_top"]')[0]
+            link_url = n.get('href')
             n.getparent().remove(n)
             self.info = soup[0].xpath('./td')[1].text_content().replace('\n','').replace('\t','').replace('\r','').strip()
-            self.url = base_url + soup[0].xpath("./td/a")[1].get('href')
+            self.url = base_url + link_url
 
 
 @respond_to('([A-Z]{2,3}) ([0-9]*)\/([0-9]{2,4})')
